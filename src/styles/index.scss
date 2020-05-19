@@ -6,3 +6,10 @@ html,
 .wrapper {
     height: 100%;
 }
+
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

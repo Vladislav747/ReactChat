@@ -6,19 +6,23 @@ import {Button, Block} from 'components';
 
 import {Auth, Home} from "pages";
 
-function App() {
+const App = props => {
+  const { isAuth } = props;
   return (
     <div className="wrapper">
-     <Block>
-      <Button 
-        className="button__large"
-        type="primary"
-        size="large" >
-          This is button
-      </Button>
-      </Block>
+      <Switch>
+        <Route
+          exact
+          path={["/signin", "/signup", "/signup/verify"]}
+          component={Auth}
+        />
+        <Route
+          path="/"
+          render={() => (isAuth ? <Home /> : <Redirect to="/signin" />)}
+        />
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
