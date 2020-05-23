@@ -20,6 +20,8 @@ const LoginFormContainer = withFormik({
 
     return errors;
   },
+  //Функция обрабатывающся результаты формы
+  //setSubmitting - функция библиотеки formik для изменения статуса отправки isSubmitting
   handleSubmit: (values, { setSubmitting, props }) => {
     store
       // .dispatch(userActions.fetchUserLogin(values))

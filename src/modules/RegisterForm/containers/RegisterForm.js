@@ -33,7 +33,7 @@ const RegisterFormContainer = withFormik({
         setSubmitting(false);
       });
   },
-  displayName: 'LoginForm',
+  displayName: 'RegisterForm',
 })(RegisterForm);
 
-export default RegisterForm;
+export default RegisterFormContainer;

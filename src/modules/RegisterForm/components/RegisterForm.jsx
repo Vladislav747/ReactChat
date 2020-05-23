@@ -2,7 +2,7 @@ import React from "react";
 import { Form } from "antd";
 import { Link } from "react-router-dom";
 import Icon from '@ant-design/icons';
-import { Button, Block } from "components";
+import { Button, Block, FormField} from "components";
 
 const success = false;
 
@@ -26,7 +26,7 @@ const RegisterForm = props => {
       <Block>
         {!success ? (
           <Form onSubmit={handleSubmit} className="login-form">
-            {/* <FormField
+            <FormField
               name="email"
               icon="mail"
               placeholder="E-Mail"
@@ -70,7 +70,7 @@ const RegisterForm = props => {
               touched={touched}
               errors={errors}
               values={values}
-            /> */}
+            />
 
             <Form.Item>
               {isSubmitting && !isValid && <span>Ошибка!</span>}

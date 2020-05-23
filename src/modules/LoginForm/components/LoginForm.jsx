@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { Button, Block } from "components";
 //import { validateField } from "utils/helpers";
 
-
 const LoginForm = props => {
     const {
       values,
@@ -27,6 +26,7 @@ const LoginForm = props => {
         </div>
         <Block>
           <Form onSubmit={handleSubmit} className="login-form">
+           
             <Form.Item
             //   validateStatus={validateField("email", touched, errors)}
               help={!touched.email ? "" : errors.email}
@@ -79,3 +79,9 @@ const LoginForm = props => {
   };
   
   export default LoginForm;
+
+  /* Form.item
+  help - Display error message
+  hasFeedback - Display status of Form
+  
+  */
