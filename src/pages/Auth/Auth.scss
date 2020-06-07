@@ -4,9 +4,30 @@
     align-items: center;
     height: 100%;
 
+
     .block{
         max-width: 430px;
         width: 100%;
+    }
+
+    &__success-block{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 400px;
+        svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        h2{
+            margin-top: 20px;
+        }
+        p{
+            color: #adadad;
+        }
     }
 }
 

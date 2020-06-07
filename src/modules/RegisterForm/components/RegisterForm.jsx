@@ -1,10 +1,13 @@
 import React from "react";
 import { Form } from "antd";
 import { Link } from "react-router-dom";
-import Icon from '@ant-design/icons';
+import {InfoCircleTwoTone} from '@ant-design/icons';
+
 import { Button, Block, FormField} from "components";
 
-const success = false;
+import "styles/RegisterForm.scss";
+
+const success = true;
 
 const RegisterForm = props => {
   const {
@@ -90,7 +93,8 @@ const RegisterForm = props => {
         ) : (
           <div className="auth__success-block">
             <div>
-              <Icon type="info-circle" theme="twoTone" />
+              {/* <Icon type="info-circle" theme="twoTone" /> */}
+              <InfoCircleTwoTone />
             </div>
             <h2>Подтвердите свой аккаунт</h2>
             <p>

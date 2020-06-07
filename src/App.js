@@ -7,7 +7,8 @@ import {Button, Block} from 'components';
 import {Auth, Home} from "pages";
 
 const App = props => {
-  const { isAuth } = props;
+  //const { isAuth } = props;
+  const isAuth = true;
   return (
     <div className="wrapper">
       <Switch>
