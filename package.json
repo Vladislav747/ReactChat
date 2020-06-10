@@ -2,6 +2,7 @@
   "name": "ReactChat",
   "version": "0.1.0",
   "private": true,
+  "homepaage":"http://Vladislav747.github.io/ReactChat",
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "@babel/core": "7.9.0",
@@ -76,7 +77,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -148,5 +151,7 @@
       "react-app"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gh-pages": "^3.0.0"
+  }
 }
