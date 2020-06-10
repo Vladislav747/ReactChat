@@ -7,7 +7,7 @@ import { Button, Block, FormField} from "components";
 
 import "styles/RegisterForm.scss";
 
-const success = true;
+const success = false;
 
 const RegisterForm = props => {
   const {
@@ -25,6 +25,8 @@ const RegisterForm = props => {
       <div className="auth__top">
         <h2>Регистрация</h2>
         <p>Для входа в чат, вам нужно зарегистрироваться</p>
+        {errors ? (<div>errors</div>): ""}
+        {console.log(errors, "Ошибки")}
       </div>
       <Block>
         {!success ? (
@@ -48,6 +50,7 @@ const RegisterForm = props => {
               handleBlur={handleBlur}
               touched={touched}
               errors={errors}
+              
               values={values}
             />
 

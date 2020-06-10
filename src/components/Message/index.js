@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import "./Message.scss";
 import {IconReaded} from "../";
 
-const Message = ({avatar, fullname, text, date, isMe, isReaded}) =>{
+const Message = ({avatar, fullname, text, date, isMe, isReaded, attachments}) =>{
     return(
         <div className={classNames("message", {'message--isme':isMe})}>
             <div className="message__info">
@@ -17,13 +17,27 @@ const Message = ({avatar, fullname, text, date, isMe, isReaded}) =>{
                         alt={`Avatar ${fullname}`}/>
                 </div>
                 <div className="message__content">
-                    <IconReaded isMe={isMe} isReaded={true} />
+                    
                     
                     <div className="message__bubble">
                         <p className="message__text">{text}</p> 
                     </div> 
-                    <span class="message__date">{distanceInWordsToNow(date, {addSuffix: true, locale: ruLocale})}</span>
+                    <span className="message__date">{distanceInWordsToNow(date, {addSuffix: true, locale: ruLocale})}</span>
+                    <div className="message__attachments">
+                        {attachments && attachments.map(item=>(
+                            <div className="message__attachments-item">
+                                <img 
+                                    src={item.url}
+                                    alt={item.filename} />
+                            </div>
+                            )
+                            )
+                        }
+                    </div>  
+
                 </div>
+                
+                <IconReaded isMe={isMe} isReaded={true} />
             </div>
             
             

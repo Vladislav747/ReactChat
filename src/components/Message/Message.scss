@@ -40,6 +40,19 @@
      line-height: 20px;
    }
 
+   &__attachments{
+     display: flex;
+
+     &-item{
+       margin: 15px;
+       img{
+         width: 45px;
+         height: auto;
+         border-radius: 4px;
+       }
+     }
+   }
+
     &--isme{
       flex-direction: row-reverse;
 

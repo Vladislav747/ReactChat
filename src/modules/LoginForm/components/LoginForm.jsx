@@ -3,9 +3,9 @@ import React from "react";
 import { Form, Input } from "antd";
 import Icon from '@ant-design/icons';
 import { Link } from "react-router-dom";
-
 import { Button, Block } from "components";
-//import { validateField } from "utils/helpers";
+
+import { validateField } from "utils/helpers";
 
 const LoginForm = props => {
     const {
@@ -28,7 +28,7 @@ const LoginForm = props => {
           <Form onSubmit={handleSubmit} className="login-form">
            
             <Form.Item
-            //   validateStatus={validateField("email", touched, errors)}
+              validateStatus={validateField("email", touched, errors)}
               help={!touched.email ? "" : errors.email}
               hasFeedback
             >

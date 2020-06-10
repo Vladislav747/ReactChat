@@ -2,8 +2,8 @@ import { withFormik } from 'formik';
 
 import LoginForm from '../components/LoginForm';
 
-//import validateForm from 'utils/validate';
-// import { userActions } from 'redux/actions';
+import validateForm from 'utils/validate';
+import { userActions } from 'redux/actions';
 
 import store from 'redux/store';
 
@@ -16,7 +16,7 @@ const LoginFormContainer = withFormik({
   validate: values => {
     let errors = {};
 
-    //validateForm({ isAuth: true, values, errors });
+    validateForm({ isAuth: true, values, errors });
 
     return errors;
   },
