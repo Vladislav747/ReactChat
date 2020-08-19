@@ -25,7 +25,7 @@ const Message = ({avatar, fullname, text, date, isMe, isReaded, attachments}) =>
                     <span className="message__date">{distanceInWordsToNow(date, {addSuffix: true, locale: ruLocale})}</span>
                     <div className="message__attachments">
                         {attachments && attachments.map(item=>(
-                            <div className="message__attachments-item">
+                            <div className="message__attachments-item" key={item.url}>
                                 <img 
                                     src={item.url}
                                     alt={item.filename} />

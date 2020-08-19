@@ -1,5 +1,5 @@
 export default ({isAuth, values, errors}) => {
-    console.log(isAuth, "isAuth");
+    console.log(isAuth, "isAuth util/validate.js");
     const rules = {
         email: value => {
             if(!value){
@@ -25,7 +25,6 @@ export default ({isAuth, values, errors}) => {
             }
         },
 
-
         fullname: value => {
             if (!isAuth && !value) {
                 console.log("дошел fullname");
@@ -33,9 +32,7 @@ export default ({isAuth, values, errors}) => {
             }
         }
     }
-    console.log(values, "check values");
     var car = Object.keys(values);
-    console.log(car, "check Object");
     Object.keys(values).forEach(key => rules[key] && rules[key](values[key]));
-    console.log(errors, "errors");
+    //console.log(errors, "errors");
 }

@@ -5,7 +5,7 @@ import {InfoCircleTwoTone} from '@ant-design/icons';
 
 import { Button, Block, FormField} from "components";
 
-import "styles/RegisterForm.scss";
+import "./RegisterForm.scss";
 
 const success = false;
 
@@ -25,8 +25,6 @@ const RegisterForm = props => {
       <div className="auth__top">
         <h2>Регистрация</h2>
         <p>Для входа в чат, вам нужно зарегистрироваться</p>
-        {errors ? (<div>errors</div>): ""}
-        {console.log(errors, "Ошибки")}
       </div>
       <Block>
         {!success ? (
