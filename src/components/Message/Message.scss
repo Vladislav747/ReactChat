@@ -38,11 +38,6 @@
         line-height: 20px;
     }
 
-    &--isme {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-
     &__attachments {
         display: flex;
 
@@ -58,7 +53,13 @@
     }
 
     &--isme {
+        display: flex;
         flex-direction: row-reverse;
+
+        .message__content {
+            margin-bottom: 15px;
+            flex-direction: row-reverse;
+        }
 
         .message__info {
             flex-direction: row-reverse;
@@ -76,7 +77,7 @@
         }
 
         .message__bubble {
-            background: #ffffff;
+            background: #fff;
             border: 1px solid #ececec;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.0220444);
             border-radius: 12px 12px 0 12px;

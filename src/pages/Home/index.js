@@ -9,7 +9,7 @@ const Home = () => (
     <section className="home">
         <Message
             fullname="Маша"
-            avatar="https://tinyfac.es/data/avatars/A7299C8E-CEFC-47D9-939A-3C8CA0EA4D13-200w.jpeg"
+            avatar="https://res.cloudinary.com/tinyfac-es/image/upload/w_1024,h_1024,c_fit/v1627200002/facebook/ohvv7rvhaeaml0barbzn.jpg"
             text="Соси писос Брат"
             date="Sun Apr 21 2019 21:30:07"
             isMe={false}
@@ -27,7 +27,7 @@ const Home = () => (
         />
         <Message
             fullname="Маша"
-            avatar="https://tinyfac.es/data/avatars/A7299C8E-CEFC-47D9-939A-3C8CA0EA4D13-200w.jpeg"
+            avatar="https://res.cloudinary.com/tinyfac-es/image/upload/w_1024,h_1024,c_fit/v1627200002/facebook/ohvv7rvhaeaml0barbzn.jpg"
             text="Сам Соси"
             date="Sun Apr 21 2019 21:30:07"
             isMe={true}
@@ -40,7 +40,7 @@ const Home = () => (
         />
         <Message
             fullname="Маша"
-            avatar="https://tinyfac.es/data/avatars/A7299C8E-CEFC-47D9-939A-3C8CA0EA4D13-200w.jpeg"
+            avatar="https://res.cloudinary.com/tinyfac-es/image/upload/w_1024,h_1024,c_fit/v1627200002/facebook/ohvv7rvhaeaml0barbzn.jpg"
             text="Соси писос Брат"
             date="Sun Apr 21 2019 21:30:07"
         />
