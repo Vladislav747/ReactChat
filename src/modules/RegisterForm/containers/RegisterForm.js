@@ -17,16 +17,15 @@ export default withFormik({
         password: "",
         password_2: "",
     }),
-    validate: values => {
+    validate: (values) => {
         let errors = {};
         validateForm({ isAuth: false, values, errors });
         return errors;
     },
     handleSubmit: (values, { setSubmitting, props }) => {
-
         alert(JSON.stringify(values, null, 2));
 
-    //store
+        //store
         //.dispatch(userActions.fetchUserRegister(values))
         // .then(() => {
         //   props.history.push('/signup/verify');

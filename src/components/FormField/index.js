@@ -1,4 +1,3 @@
-  
 import React from "react";
 import { Form, Input } from "antd";
 import Icon from "@ant-design/icons";
@@ -13,17 +12,15 @@ const FormField = ({
     handleBlur,
     touched,
     errors,
-    values
+    values,
 }) => {
     return (
-        <Form.Item
-      
-            help={!touched[name] ? "" : errors[name]}
-            hasFeedback
-        >
+        <Form.Item help={!touched[name] ? "" : errors[name]} hasFeedback>
             <Input
                 id={name}
-                prefix={<Icon type={icon} style={{ color: "rgba(0,0,0,.25)" }} />}
+                prefix={
+                    <Icon type={icon} style={{ color: "rgba(0,0,0,.25)" }} />
+                }
                 size="large"
                 placeholder={placeholder}
                 value={values[name]}

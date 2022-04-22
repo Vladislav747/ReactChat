@@ -1,15 +1,15 @@
 import React from "react";
 import { Form } from "antd";
 import { Link } from "react-router-dom";
-import {InfoCircleTwoTone} from "@ant-design/icons";
+import { InfoCircleTwoTone } from "@ant-design/icons";
 
-import { Button, Block, FormField} from "components";
+import { Button, Block, FormField } from "components";
 
 import "./RegisterForm.scss";
 
 const success = false;
 
-const RegisterForm = props => {
+const RegisterForm = (props) => {
     const {
         values,
         touched,
@@ -18,7 +18,7 @@ const RegisterForm = props => {
         handleBlur,
         handleSubmit,
         isValid,
-        isSubmitting
+        isSubmitting,
     } = props;
     return (
         <div>
@@ -48,7 +48,6 @@ const RegisterForm = props => {
                             handleBlur={handleBlur}
                             touched={touched}
                             errors={errors}
-              
                             values={values}
                         />
 
@@ -84,11 +83,11 @@ const RegisterForm = props => {
                                 type="primary"
                                 size="large"
                             >
-                Зарегистрироваться
+                                Зарегистрироваться
                             </Button>
                         </Form.Item>
                         <Link className="auth__register-link" to="/signin">
-              Войти в аккаунт
+                            Войти в аккаунт
                         </Link>
                     </Form>
                 ) : (
@@ -99,8 +98,8 @@ const RegisterForm = props => {
                         </div>
                         <h2>Подтвердите свой аккаунт</h2>
                         <p>
-              На Вашу почту отправлено письмо с ссылкой на подтверждение
-              аккаунта.
+                            На Вашу почту отправлено письмо с ссылкой на
+                            подтверждение аккаунта.
                         </p>
                     </div>
                 )}

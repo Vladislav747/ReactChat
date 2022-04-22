@@ -13,7 +13,7 @@ const LoginFormContainer = withFormik({
         email: "",
         password: "",
     }),
-    validate: values => {
+    validate: (values) => {
         let errors = {};
 
         validateForm({ isAuth: true, values, errors });
@@ -24,7 +24,7 @@ const LoginFormContainer = withFormik({
     //setSubmitting - функция библиотеки formik для изменения статуса отправки isSubmitting
     handleSubmit: (values, { setSubmitting, props }) => {
         store
-        // .dispatch(userActions.fetchUserLogin(values))
+            // .dispatch(userActions.fetchUserLogin(values))
             .then(({ status }) => {
                 if (status === "success") {
                     props.history.push("/");

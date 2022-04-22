@@ -8,16 +8,16 @@ const { Option } = Select;
 const { Textarea } = Input;
 
 const Sidebar = () => {
-  return (
-    <div className="chat__sidebar">
-      <div className="chat__sidebar-header">
-        <div>
-          <TeamOutlined />
-          <span>Список диалогов</span>
+    return (
+        <div className="chat__sidebar">
+            <div className="chat__sidebar-header">
+                <div>
+                    <TeamOutlined />
+                    <span>Список диалогов</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Sidebar;

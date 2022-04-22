@@ -1,4 +1,3 @@
-  
 import React from "react";
 import { Form, Input } from "antd";
 import Icon from "@ant-design/icons";
@@ -7,7 +6,7 @@ import { Button, Block } from "components";
 
 import { validateField } from "utils/helpers";
 
-const LoginForm = props => {
+const LoginForm = (props) => {
     const {
         values,
         touched,
@@ -16,7 +15,7 @@ const LoginForm = props => {
         handleBlur,
         handleSubmit,
         isValid,
-        isSubmitting
+        isSubmitting,
     } = props;
     return (
         <div>
@@ -26,7 +25,6 @@ const LoginForm = props => {
             </div>
             <Block>
                 <Form onSubmit={handleSubmit} className="login-form">
-           
                     <Form.Item
                         validateStatus={validateField("email", touched, errors)}
                         help={!touched.email ? "" : errors.email}
@@ -34,7 +32,12 @@ const LoginForm = props => {
                     >
                         <Input
                             id="email"
-                            prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
+                            prefix={
+                                <Icon
+                                    type="mail"
+                                    style={{ color: "rgba(0,0,0,.25)" }}
+                                />
+                            }
                             size="large"
                             placeholder="E-Mail"
                             value={values.email}
@@ -49,7 +52,12 @@ const LoginForm = props => {
                     >
                         <Input
                             id="password"
-                            prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+                            prefix={
+                                <Icon
+                                    type="lock"
+                                    style={{ color: "rgba(0,0,0,.25)" }}
+                                />
+                            }
                             size="large"
                             type="password"
                             placeholder="Пароль"
@@ -66,16 +74,16 @@ const LoginForm = props => {
                             type="primary"
                             size="large"
                         >
-                Войти в аккаунт
+                            Войти в аккаунт
                         </Button>
                     </Form.Item>
                     <Link className="auth__register-link" to="/signup">
-              Зарегистрироваться
+                        Зарегистрироваться
                     </Link>
                 </Form>
             </Block>
         </div>
     );
 };
-  
+
 export default LoginForm;
