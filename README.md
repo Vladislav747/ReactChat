@@ -6,4 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Stack of Technologies
 
-Formik - Helps us to work with the Data of Form
+- React
+
+- Formik - Helps us to validate Data of Form
+
+- Ant-Design
+

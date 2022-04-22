@@ -2,14 +2,14 @@
 // import { userApi } from 'utils/api';
 
 const Actions = {
-  setUserData: data => ({
-    type: 'USER:SET_DATA',
-    payload: data,
-  }),
-  setIsAuth: bool => ({
-    type: 'USER:SET_IS_AUTH',
-    payload: bool,
-  }),
+    setUserData: data => ({
+        type: "USER:SET_DATA",
+        payload: data,
+    }),
+    setIsAuth: bool => ({
+        type: "USER:SET_IS_AUTH",
+        payload: bool,
+    }),
 //   fetchUserData: () => dispatch => {
 //     userApi
 //       .getMe()

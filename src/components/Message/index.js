@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
-import ruLocale from 'date-fns/locale/ru';
-import classNames from 'classnames';
+import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
+import ruLocale from "date-fns/locale/ru";
+import classNames from "classnames";
 
 import "./Message.scss";
 import {IconReaded} from "../";
 
-const Message = ({avatar, fullname, text, date, isMe, isReaded, attachments}) =>{
+const Message = ({avatar, fullname, text, date, isMe, attachments}) =>{
     return(
-        <div className={classNames("message", {'message--isme':isMe})}>
+        <div className={classNames("message", {"message--isme":isMe})}>
             <div className="message__info">
                 <div className="message__avatar">
                     <img 
@@ -30,8 +30,8 @@ const Message = ({avatar, fullname, text, date, isMe, isReaded, attachments}) =>
                                     src={item.url}
                                     alt={item.filename} />
                             </div>
-                            )
-                            )
+                        )
+                        )
                         }
                     </div>  
 
@@ -44,8 +44,8 @@ const Message = ({avatar, fullname, text, date, isMe, isReaded, attachments}) =>
         </div>
 
         
-    )
-}
+    );
+};
 
 
 Message.propTypes = {
@@ -53,6 +53,9 @@ Message.propTypes = {
     text: PropTypes.string,
     date: PropTypes.string,
     fullname: PropTypes.string,
-}
+    isMe: PropTypes.bool,
+    isReaded: PropTypes.bool,
+    attachments: PropTypes.array,
+};
 
 export default Message;

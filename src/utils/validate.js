@@ -28,11 +28,11 @@ export default ({isAuth, values, errors}) => {
         fullname: value => {
             if (!isAuth && !value) {
                 console.log("дошел fullname");
-              errors.fullname = "Укажите свое имя и фамилию";
+                errors.fullname = "Укажите свое имя и фамилию";
             }
         }
-    }
+    };
     var car = Object.keys(values);
     Object.keys(values).forEach(key => rules[key] && rules[key](values[key]));
     //console.log(errors, "errors");
-}
+};

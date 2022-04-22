@@ -15,10 +15,10 @@ import "emoji-mart/css/emoji-mart.css";
 //store.dispatch(userActions.fetchUserData());
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>,
+    document.getElementById("root")
 );
