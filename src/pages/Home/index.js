@@ -31,6 +31,7 @@ const Home = () => (
             text="Сам Соси"
             date="Sun Apr 21 2019 21:30:07"
             isMe={true}
+            isReaded={false}
             attachments={[
                 {
                     filename: "image.jpg",
@@ -43,6 +44,7 @@ const Home = () => (
             avatar="https://res.cloudinary.com/tinyfac-es/image/upload/w_1024,h_1024,c_fit/v1627200002/facebook/ohvv7rvhaeaml0barbzn.jpg"
             text="Соси писос Брат"
             date="Sun Apr 21 2019 21:30:07"
+            isReaded={true}
         />
         <SidebarContainer />
     </section>

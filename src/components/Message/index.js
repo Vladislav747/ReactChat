@@ -7,7 +7,16 @@ import classNames from "classnames";
 import "./Message.scss";
 import { IconReaded } from "../";
 
-const Message = ({ avatar, fullname, text, date, isMe, attachments, user }) => {
+const Message = ({
+    avatar,
+    fullname,
+    text,
+    date,
+    isMe,
+    attachments,
+    user,
+    isReaded,
+}) => {
     return (
         <div className={classNames("message", { "message--isme": isMe })}>
             <div className="message__info">
@@ -35,7 +44,7 @@ const Message = ({ avatar, fullname, text, date, isMe, attachments, user }) => {
                             locale: ruLocale,
                         })}
                     </div>
-                    <IconReaded isMe={isMe} isReaded={true} />
+                    <IconReaded isMe={isMe} isReaded={isReaded} />
                 </div>
             </div>
         </div>
