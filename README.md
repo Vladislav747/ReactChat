@@ -7,8 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Stack of Technologies
 
 - React
-
+- React-Redux
 - Formik - Helps us to validate Data of Form
-
 - Ant-Design
+- Typescript
 

@@ -1,9 +1,8 @@
 import React from "react";
 import { Form, Input } from "antd";
-import Icon from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { Button, Block } from "components";
 
+import { Button, Block } from "../components";
 import { validateField } from "utils/helpers";
 
 const LoginForm = (props) => {
@@ -32,12 +31,6 @@ const LoginForm = (props) => {
                     >
                         <Input
                             id="email"
-                            prefix={
-                                <Icon
-                                    type="mail"
-                                    style={{ color: "rgba(0,0,0,.25)" }}
-                                />
-                            }
                             size="large"
                             placeholder="E-Mail"
                             value={values.email}
@@ -46,18 +39,16 @@ const LoginForm = (props) => {
                         />
                     </Form.Item>
                     <Form.Item
-                        //   validateStatus={validateField("password", touched, errors)}
+                        validateStatus={validateField(
+                            "password",
+                            touched,
+                            errors
+                        )}
                         help={!touched.password ? "" : errors.password}
                         hasFeedback
                     >
                         <Input
                             id="password"
-                            prefix={
-                                <Icon
-                                    type="lock"
-                                    style={{ color: "rgba(0,0,0,.25)" }}
-                                />
-                            }
                             size="large"
                             type="password"
                             placeholder="Пароль"

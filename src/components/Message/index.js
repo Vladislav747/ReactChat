@@ -17,6 +17,7 @@ const Message = ({
     user,
     isReaded,
 }) => {
+    console.log(user, "user");
     return (
         <div className={classNames("message", { "message--isme": isMe })}>
             <div className="message__info">

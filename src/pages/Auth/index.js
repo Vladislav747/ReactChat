@@ -6,6 +6,7 @@ import { LoginForm, RegisterForm } from "modules";
 
 import "./Auth.scss";
 
+console.log("ad");
 const Auth = () => (
     <section className="auth">
         <div className="auth__content">

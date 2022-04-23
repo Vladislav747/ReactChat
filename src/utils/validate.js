@@ -1,5 +1,4 @@
 export default ({ isAuth, values, errors }) => {
-    console.log(isAuth, "isAuth util/validate.js");
     const rules = {
         email: (value) => {
             if (!value) {
@@ -13,7 +12,6 @@ export default ({ isAuth, values, errors }) => {
         password: (value) => {
             if (!value) {
                 errors.password = "Введите пароль";
-                //Проверяем сложность пароля
             } else if (
                 !isAuth &&
                 !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(value)
@@ -26,13 +24,12 @@ export default ({ isAuth, values, errors }) => {
                 errors.password_2 = "Пароли не совпадают";
             }
         },
-
         fullname: (value) => {
             if (!isAuth && !value) {
-                console.log("дошел fullname");
                 errors.fullname = "Укажите свое имя и фамилию";
             }
         },
     };
+
     Object.keys(values).forEach((key) => rules[key] && rules[key](values[key]));
 };

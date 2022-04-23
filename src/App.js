@@ -2,10 +2,10 @@ import React from "react";
 
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import { Auth, Home } from "pages";
+import { Auth, Home } from "./pages";
 
-const App = () => {
-    const isAuth = true;
+const App = (props) => {
+    const { isAuth } = props;
     return (
         <div className="wrapper">
             <Switch>
