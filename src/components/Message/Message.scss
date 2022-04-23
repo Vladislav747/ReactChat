@@ -2,6 +2,14 @@
 .message {
     display: flex;
 
+    &__content{
+        & > div{
+            display: flex;
+            max-width: 440px;
+            margin-bottom: 15px;
+        }
+    }
+
     &__info {
         display: flex;
         margin-bottom: 10px;
@@ -62,14 +70,14 @@
         }
 
         .message__info {
-            flex-direction: row-reverse;
+            flex-direction: row;
         }
 
         .message__avatar {
             img {
                 margin-right: 0;
-                margin-left: 13px;
             }
+            padding-right: 15px;
         }
 
         .message__info {

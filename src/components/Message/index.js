@@ -7,7 +7,7 @@ import classNames from "classnames";
 import "./Message.scss";
 import { IconReaded } from "../";
 
-const Message = ({ avatar, fullname, text, date, isMe, attachments }) => {
+const Message = ({ avatar, fullname, text, date, isMe, attachments, user }) => {
     return (
         <div className={classNames("message", { "message--isme": isMe })}>
             <div className="message__info">
@@ -18,12 +18,6 @@ const Message = ({ avatar, fullname, text, date, isMe, attachments }) => {
                     <div className="message__bubble">
                         <p className="message__text">{text}</p>
                     </div>
-                    <span className="message__date">
-                        {distanceInWordsToNow(date, {
-                            addSuffix: true,
-                            locale: ruLocale,
-                        })}
-                    </span>
                     <div className="message__attachments">
                         {attachments &&
                             attachments.map((item) => (
@@ -35,12 +29,21 @@ const Message = ({ avatar, fullname, text, date, isMe, attachments }) => {
                                 </div>
                             ))}
                     </div>
+                    <div className="message__date">
+                        {distanceInWordsToNow(date, {
+                            addSuffix: true,
+                            locale: ruLocale,
+                        })}
+                    </div>
+                    <IconReaded isMe={isMe} isReaded={true} />
                 </div>
-
-                <IconReaded isMe={isMe} isReaded={true} />
             </div>
         </div>
     );
+};
+
+Message.defaultProps = {
+    user: {},
 };
 
 Message.propTypes = {
@@ -51,6 +54,7 @@ Message.propTypes = {
     isMe: PropTypes.bool,
     isReaded: PropTypes.bool,
     attachments: PropTypes.array,
+    user: PropTypes.object,
 };
 
 export default Message;

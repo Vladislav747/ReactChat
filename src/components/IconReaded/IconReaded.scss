@@ -1,0 +1,8 @@
+.message__icon-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    &--isme {
+        justify-content: flex-start;
+    }
+}
