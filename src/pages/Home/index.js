@@ -1,6 +1,6 @@
 import React from "react";
 
-import SidebarContainer from "containers/Sidebar";
+import SidebarContainer from "../../containers/Sidebar";
 import Message from "../../components/Message";
 
 import "./Home.scss";

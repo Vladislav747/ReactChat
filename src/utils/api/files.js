@@ -1,4 +1,4 @@
-import { axios } from "core";
+import { axios } from "../../core";
 
 export default {
     upload: (file) => {

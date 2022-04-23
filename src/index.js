@@ -4,9 +4,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import App from "./App";
-import { userActions } from "redux/actions";
+import { userActions } from "./redux/actions";
 
-import store from "redux/store";
+import store from "./redux/store";
 
 import "./styles/index.scss";
 import "emoji-mart/css/emoji-mart.css";

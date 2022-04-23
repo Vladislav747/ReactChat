@@ -3,7 +3,7 @@ import { Form } from "antd";
 import { Link } from "react-router-dom";
 import { InfoCircleTwoTone } from "@ant-design/icons";
 
-import { Button, Block, FormField } from "components";
+import { Button, Block, FormField } from "../../../components";
 
 import "./RegisterForm.scss";
 

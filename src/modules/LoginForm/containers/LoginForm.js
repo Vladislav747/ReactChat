@@ -2,10 +2,9 @@ import { withFormik } from "formik";
 
 import LoginForm from "../components/LoginForm";
 
-import validateForm from "utils/validate";
-import { userActions } from "redux/actions";
+import validateForm from "../../../utils/validate";
 
-import store from "redux/store";
+import store from "../../../redux/store";
 
 const LoginFormContainer = withFormik({
     enableReinitialize: true,

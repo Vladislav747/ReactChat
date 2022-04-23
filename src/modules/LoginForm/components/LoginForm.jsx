@@ -2,8 +2,8 @@ import React from "react";
 import { Form, Input } from "antd";
 import { Link } from "react-router-dom";
 
-import { Button, Block } from "../components";
-import { validateField } from "utils/helpers";
+import { Button, Block } from "../../../components";
+import { validateField } from "../../../utils/helpers";
 
 const LoginForm = (props) => {
     const {

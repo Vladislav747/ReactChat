@@ -1,11 +1,8 @@
 import React from "react";
-import { Select, Input } from "antd";
+
 import { TeamOutlined } from "@ant-design/icons";
 
 import "./Sidebar.scss";
-
-const { Option } = Select;
-const { Textarea } = Input;
 
 const Sidebar = () => {
     return (
