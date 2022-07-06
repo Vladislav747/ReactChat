@@ -16,7 +16,8 @@ export default ({ isAuth, values, errors }) => {
                 !isAuth &&
                 !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(value)
             ) {
-                errors.password = "Слишком лёгкий пароль";
+                errors.password =
+                    "Пароль должен содержать заглавные буквы, цифры и латинские буквы";
             }
         },
         password_2: (value) => {
