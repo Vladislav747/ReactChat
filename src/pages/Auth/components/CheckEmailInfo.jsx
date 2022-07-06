@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Result, Button, Spin } from "antd";
 
-import { userApi } from "utils/api";
-import { Block } from "components";
+import { userApi } from "../../../utils/api";
+import { Block } from "../../../components";
 
 const renderTextInfo = ({ hash, verified }) => {
     if (hash) {
@@ -28,6 +28,13 @@ const renderTextInfo = ({ hash, verified }) => {
     }
 };
 
+/**
+ * Окно для верификации логина
+ * @param location
+ * @param history
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const CheckEmailInfo = ({ location, history }) => {
     const hash = location.search.split("hash=")[1];
     const [verified, setVerified] = useState(false);

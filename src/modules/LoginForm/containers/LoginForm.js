@@ -5,6 +5,7 @@ import LoginForm from "../components/LoginForm";
 import validateForm from "../../../utils/validate";
 
 import store from "../../../redux/store";
+import { userActions } from "../../../redux/actions";
 
 const LoginFormContainer = withFormik({
     enableReinitialize: true,
@@ -23,7 +24,7 @@ const LoginFormContainer = withFormik({
     //setSubmitting - функция библиотеки formik для изменения статуса отправки isSubmitting
     handleSubmit: (values, { setSubmitting, props }) => {
         store
-            // .dispatch(userActions.fetchUserLogin(values))
+            .dispatch(userActions.fetchUserLogin(values))
             .then(({ status }) => {
                 if (status === "success") {
                     props.history.push("/");
