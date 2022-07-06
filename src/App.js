@@ -1,11 +1,12 @@
 import React from "react";
-
+import { connect } from "react-redux";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 import { Auth, Home } from "./pages";
 
 const App = (props) => {
     const { isAuth } = props;
+    console.log(isAuth, "isAuth");
     return (
         <div className="wrapper">
             <Switch>
@@ -25,4 +26,4 @@ const App = (props) => {
     );
 };
 
-export default App;
+export default connect(({ user }) => ({ isAuth: user.isAuth }))(App);

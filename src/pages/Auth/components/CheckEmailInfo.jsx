@@ -49,12 +49,15 @@ const CheckEmailInfo = ({ location, history }) => {
         setChecking(checking);
     };
 
+    /**
+     * Проверить хэш токена и в зависимости от этого показать картинку подвертите акккаунт или
+     */
     useEffect(() => {
         if (hash) {
             userApi
                 .verifyHash(hash)
                 .then(() => {
-                    setStatus({ verified: true, checking: false });
+                    setStatus({ verified: false, checking: false });
                 })
                 .catch(() => {
                     setStatus({ verified: false, checking: false });
