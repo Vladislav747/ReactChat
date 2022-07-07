@@ -1,4 +1,4 @@
-import { messagesApi } from "utils/api";
+import { messagesApi } from "../../utils/api";
 
 const Actions = {
     setMessages: (items) => ({
@@ -18,7 +18,7 @@ const Actions = {
     },
     fetchSendMessage:
         ({ text, dialogId, attachments }) =>
-        (dispatch) => {
+        () => {
             return messagesApi.send(text, dialogId, attachments);
         },
     setIsLoading: (bool) => ({
@@ -29,7 +29,7 @@ const Actions = {
         if (window.confirm("Вы действительно хотите удалить сообщение?")) {
             messagesApi
                 .removeById(id)
-                .then(({ data }) => {
+                .then(() => {
                     dispatch({
                         type: "MESSAGES:REMOVE_MESSAGE",
                         payload: id,

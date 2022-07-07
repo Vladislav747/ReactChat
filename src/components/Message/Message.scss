@@ -1,31 +1,34 @@
 @import "../../styles/variables";
 .message {
-    display: flex;
+    $self: &;
 
-    &__content{
-        & > div{
-            display: flex;
-            max-width: 440px;
-            margin-bottom: 15px;
-        }
-    }
-
-    &__info {
+    &__content {
         display: flex;
-        margin-bottom: 10px;
+        flex-direction: column;
+        order: 1;
+        max-width: 440px;
+        margin-bottom: 20px;
+        position: relative;
+
+        &:hover {
+            #{$self}__icon-actions {
+                display: block;
+            }
+        }
     }
 
     &__avatar {
         display: flex;
         flex-direction: column-reverse;
-        max-width: 440px;
 
         img {
             border-radius: 50px;
             width: 33px;
             height: 33px;
             margin-right: 13px;
-            margin-top: 23px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            line-height: 31px;
         }
     }
 
@@ -40,22 +43,136 @@
     &__date {
         font-size: 12px;
         opacity: 0.4;
+        order: 3;
     }
+
     &__text {
         color: #fff;
         line-height: 20px;
     }
 
+    &__info {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
     &__attachments {
         display: flex;
+        margin-bottom: 5px;
+        order: 2;
 
         &-item {
-            margin: 15px;
+            $item: &;
+            margin-right: 5px;
             cursor: pointer;
+            position: relative;
+
             img {
                 width: 45px;
-                height: auto;
-                border-radius: 4px;
+                height: 45px;
+                border-radius: 8px;
+            }
+
+            &:hover {
+                #{$item}-overlay {
+                    opacity: 1;
+                }
+            }
+
+            .anticon-eye {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+
+            &-overlay {
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                transition: opacity 0.15s ease-in-out;
+                border-radius: 8px;
+            }
+        }
+    }
+
+    &__icon {
+        &-readed {
+            position: absolute;
+            bottom: 22px;
+            right: -25px;
+        }
+
+        &--no {
+            left: -20px;
+        }
+    }
+
+    &-actions {
+        display: none;
+        transform: rotate(90deg);
+        position: absolute;
+        left: -31px;
+        top: -5px;
+    }
+
+    &--is-audio {
+        audio {
+            display: none;
+        }
+
+        #{$self}__bubble {
+            width: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+        #{$self}__audio {
+            padding: 15px;
+            background-color: #3674ff;
+            border-radius: 12px 12px 0 12px;
+            width: 250px;
+            overflow: hidden;
+            position: relative;
+            &-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+            }
+            &-btn {
+                button {
+                    display: flex;
+                    cursor: pointer;
+                    border: 0;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 30px;
+                    background: #0f3997;
+                    img {
+                        height: 13px;
+                        position: relative;
+                        left: 1px;
+                    }
+                }
+            }
+            &-duration {
+                color: #fff;
+                font-weight: 500;
+                opacity: 0.5;
+                font-size: 12px;
+            }
+            &-progress {
+                left: 0;
+                top: 0;
+                position: absolute;
+                background-color: #418fff;
+                height: 100%;
+                transition: width 0.3s ease;
             }
         }
     }
@@ -66,7 +183,7 @@
 
         .message__content {
             margin-bottom: 15px;
-            flex-direction: row-reverse;
+            flex-direction: column-reverse;
         }
 
         .message__info {

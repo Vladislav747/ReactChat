@@ -1,6 +1,6 @@
 import React from "react";
-import { Icon, Button, Modal, Select, Input, Form } from "antd";
-import { Dialogs } from "containers";
+import { Button, Modal, Select, Input, Form } from "antd";
+import { Dialogs } from "../../containers";
 
 import "./Sidebar.scss";
 
@@ -31,7 +31,6 @@ const Sidebar = ({
         <div className="chat__sidebar">
             <div className="chat__sidebar-header">
                 <div>
-                    <Icon type="team" />
                     <span>Список диалогов</span>
                 </div>
                 <Button

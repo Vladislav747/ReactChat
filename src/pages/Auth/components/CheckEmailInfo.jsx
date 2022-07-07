@@ -63,9 +63,8 @@ const CheckEmailInfo = ({ location, history }) => {
                     setStatus({ verified: false, checking: false });
                 });
         }
-    }, []);
-
-    console.log({ info, checking, verified, hash });
+        //eslint-disable-next-line
+    }, [hash]);
 
     return (
         <div className="verify-block">

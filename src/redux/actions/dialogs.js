@@ -1,5 +1,5 @@
-import { dialogsApi } from "utils/api";
-import socket from "core/socket";
+import { dialogsApi } from "../../utils/api";
+import socket from "../../core/socket";
 
 const Actions = {
     setDialogs: (items) => ({
@@ -14,6 +14,9 @@ const Actions = {
         },
     }),
     setCurrentDialogId: (id) => (dispatch) => {
+        /**
+         * Вызывать событие в socket
+         */
         socket.emit("DIALOGS:JOIN", id);
         dispatch({
             type: "DIALOGS:SET_CURRENT_DIALOG_ID",
