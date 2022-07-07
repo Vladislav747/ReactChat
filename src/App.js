@@ -6,7 +6,6 @@ import { Auth, Home } from "./pages";
 
 const App = (props) => {
     const { isAuth } = props;
-    console.log(isAuth, "isAuth");
     return (
         <div className="wrapper">
             <Switch>
