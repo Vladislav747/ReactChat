@@ -7,6 +7,25 @@ import "./Sidebar.scss";
 const { Option } = Select;
 const { TextArea } = Input;
 
+/**
+ * Левый Sidebar с диалогами
+ * @param user
+ * @param visible
+ * @param inputValue
+ * @param messageText
+ * @param selectedUserId
+ * @param isLoading
+ * @param users
+ * @param onShow
+ * @param onClose
+ * @param onSearch
+ * @param onChangeInput
+ * @param onSelectUser
+ * @param onChangeTextArea
+ * @param onModalOk
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Sidebar = ({
     user,
     visible,

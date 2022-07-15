@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button as BaseButton } from "antd";
-//A simple JavaScript utility for conditionally joining classNames together.
 import classNames from "classnames";
 
 import "./Button.scss";
 
 const Button = (props) => (
-    <BaseButton className={classNames("button", props.className)} {...props} />
+    <BaseButton
+        {...props}
+        className={classNames("button", props.className, {
+            "button--large": props.size === "large",
+        })}
+    />
 );
 
 Button.propTypes = {
