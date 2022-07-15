@@ -5,7 +5,16 @@ import { generateAvatarFromHash } from "../../utils/helpers";
 
 import "./Avatar.scss";
 
+/**
+ * Компонент Аватара
+ * @param user
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Avatar = ({ user }) => {
+    /**
+     * Есть ли у пользователя img в бд если нет то выводим цветную рандомную картинку
+     */
     if (user.avatar) {
         return (
             <img
