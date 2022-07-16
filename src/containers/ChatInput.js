@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { filesApi } from "utils/api";
-import socket from "core/socket";
+import { filesApi } from "../utils/api";
+import socket from "../core/socket";
 
-import { ChatInput as ChatInputBase } from "components";
+import { ChatInput as ChatInputBase } from "../components";
 
-import { messagesActions, attachmentsActions } from "redux/actions";
+import { messagesActions, attachmentsActions } from "../redux/actions";
 
-const ChatInput = props => {
+const ChatInput = (props) => {
     const {
         dialogs: { currentDialogId },
         attachments,
@@ -17,9 +17,9 @@ const ChatInput = props => {
         user,
     } = props;
 
-    if (!currentDialogId) {
-        return null;
-    }
+    // if (!currentDialogId) {
+    //     return null;
+    // }
 
     window.navigator.getUserMedia =
         window.navigator.getUserMedia ||
@@ -43,7 +43,7 @@ const ChatInput = props => {
         }
     };
 
-    const onRecording = stream => {
+    const onRecording = (stream) => {
         const recorder = new MediaRecorder(stream);
         setMediaRecorder(recorder);
 
@@ -57,7 +57,7 @@ const ChatInput = props => {
             setIsRecording(false);
         };
 
-        recorder.ondataavailable = e => {
+        recorder.ondataavailable = (e) => {
             const file = new File([e.data], "audio.webm");
             setLoading(true);
             filesApi.upload(file).then(({ data }) => {
@@ -68,7 +68,7 @@ const ChatInput = props => {
         };
     };
 
-    const onError = err => {
+    const onError = (err) => {
         console.log("The following error occured: " + err);
     };
 
@@ -82,7 +82,7 @@ const ChatInput = props => {
         setValue((value + " " + colons).trim());
     };
 
-    const sendAudio = audioId => {
+    const sendAudio = (audioId) => {
         return fetchSendMessage({
             text: null,
             dialogId: currentDialogId,
@@ -97,14 +97,14 @@ const ChatInput = props => {
             fetchSendMessage({
                 text: value,
                 dialogId: currentDialogId,
-                attachments: attachments.map(file => file.uid),
+                attachments: attachments.map((file) => file.uid),
             });
             setValue("");
             setAttachments([]);
         }
     };
 
-    const handleSendMessage = e => {
+    const handleSendMessage = (e) => {
         socket.emit("DIALOGS:TYPING", { dialogId: currentDialogId, user });
         if (e.keyCode === 13) {
             sendMessage();
@@ -115,7 +115,7 @@ const ChatInput = props => {
         setIsRecording(false);
     };
 
-    const onSelectFiles = async files => {
+    const onSelectFiles = async (files) => {
         let uploaded = [];
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
@@ -131,7 +131,7 @@ const ChatInput = props => {
             setAttachments(uploaded);
             // eslint-disable-next-line no-loop-func
             await filesApi.upload(file).then(({ data }) => {
-                uploaded = uploaded.map(item => {
+                uploaded = uploaded.map((item) => {
                     if (item.uid === uid) {
                         return {
                             status: "done",
@@ -151,7 +151,10 @@ const ChatInput = props => {
         const el = document.querySelector(".chat-input__smile-btn");
         document.addEventListener("click", handleOutsideClick.bind(this, el));
         return () => {
-            document.removeEventListener("click", handleOutsideClick.bind(this, el));
+            document.removeEventListener(
+                "click",
+                handleOutsideClick.bind(this, el)
+            );
         };
     }, []);
 
@@ -181,5 +184,5 @@ export default connect(
         attachments: attachments.items,
         user: user.data,
     }),
-    { ...messagesActions, ...attachmentsActions },
+    { ...messagesActions, ...attachmentsActions }
 )(ChatInput);
