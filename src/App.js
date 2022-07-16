@@ -19,7 +19,7 @@ const App = (props) => {
                     // render={() =>
                     //     isAuth ? <Home /> : <Redirect to="/signin" />
                     // }
-                    render={Home}
+                    component={Home}
                 />
             </Switch>
         </div>

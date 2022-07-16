@@ -8,11 +8,11 @@ import "../../styles/layouts/_chat.scss";
 
 const Home = (props) => {
     const { setCurrentDialogId, user } = props;
-    // useEffect(() => {
-    //     const { pathname } = props.location;
-    //     const dialogId = pathname.split("/").pop();
-    //     setCurrentDialogId(dialogId);
-    // }, [props.location.pathname]);
+    useEffect(() => {
+        const { pathname } = props.location;
+        // const dialogId = pathname.split("/").pop();
+        // setCurrentDialogId(dialogId);
+    }, [props.location.pathname]);
 
     return (
         <section className="home">
