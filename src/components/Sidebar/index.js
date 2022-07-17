@@ -3,6 +3,7 @@ import { Button, Modal, Select, Input, Form } from "antd";
 import { Dialogs } from "../../containers";
 
 import "./Sidebar.scss";
+import { ReactComponent as PlusIcon } from "../../assets/icons/PlusIcon.svg";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -52,11 +53,10 @@ const Sidebar = ({
                 <div>
                     <span>Список диалогов</span>
                 </div>
-                <Button
+                <PlusIcon
+                    className="plus-icon"
                     onClick={onShow}
-                    type="link"
-                    shape="circle"
-                    icon="form"
+                    alt="оздать диалог"
                 />
             </div>
 

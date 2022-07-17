@@ -1,0 +1,12 @@
+.plus-icon {
+    cursor: pointer;
+}
+
+.add-dialog-form {
+  .ant-form-item {
+    margin-bottom: 0;
+    &-label {
+      line-height: inherit !important;
+    }
+  }
+}

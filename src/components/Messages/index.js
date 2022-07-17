@@ -20,6 +20,7 @@ const Messages = ({
     isTyping,
     partner,
 }) => {
+    console.log(user, "messages");
     return (
         <div
             className="chat__dialog-messages"

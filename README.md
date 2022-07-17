@@ -1,8 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React-Chat
 
 ## Deploy HERE https://vladislav747.github.io/ReactChat/
-
-## Available Scripts
 
 Stack of Technologies
 

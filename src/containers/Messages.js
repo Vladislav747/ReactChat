@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { Empty } from "antd";
 import find from "lodash/find";
 
-import { messagesActions } from "redux/actions";
-import socket from "core/socket";
+import { messagesActions } from "../redux/actions";
+import socket from "../core/socket";
 
-import { Messages as BaseMessages } from "components";
+import { Messages as BaseMessages } from "../components";
 
-const Dialogs = ({
+const Messages = ({
     currentDialog,
     fetchMessages,
     addMessage,
@@ -18,15 +18,13 @@ const Dialogs = ({
     removeMessageById,
     attachments,
 }) => {
-    if (!currentDialog) {
-        return <Empty description="Откройте диалог" />;
-    }
-
+    console.log(items, "items");
+    console.log(user, "user");
     const [previewImage, setPreviewImage] = useState(null);
     const [blockHeight, setBlockHeight] = useState(135);
     const [isTyping, setIsTyping] = useState(false);
     let typingTimeoutId = null;
-
+    console.log(isTyping, "isTyping");
     const messagesRef = useRef(null);
 
     const onNewMessage = (data) => {
@@ -64,10 +62,12 @@ const Dialogs = ({
     }, [currentDialog]);
 
     useEffect(() => {
-        messagesRef.current.scrollTo(0, 999999);
+        if (messagesRef?.current) messagesRef.current.scrollTo(0, 999999);
     }, [items, isTyping]);
 
-    return (
+    return !currentDialog ? (
+        <Empty description="Откройте диалог" />
+    ) : (
         <BaseMessages
             user={user}
             blockRef={messagesRef}
@@ -96,4 +96,4 @@ export default connect(
         user: user.data,
     }),
     messagesActions
-)(Dialogs);
+)(Messages);

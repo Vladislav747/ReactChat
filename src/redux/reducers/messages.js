@@ -1,5 +1,7 @@
+import { defaultMessages } from "../defaultValues";
+
 const initialState = {
-    items: [],
+    items: defaultMessages,
     isLoading: false,
 };
 
