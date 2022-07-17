@@ -16,5 +16,20 @@ export const defaultMessages = [
                 url: " https://images.unsplash.com/photo-1591609010524-339e8fcd3962?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
             },
         ],
+        user: {
+            id: "62c5ecb9b759d32b320f43ac",
+        },
+    },
+    {
+        fullname: "Петя",
+        avatar: "https://res.cloudinary.com/tinyfac-es/image/upload/w_1024,h_1024,c_fit/v1627200002/facebook/ohvv7rvhaeaml0barbzn.jpg",
+        text: "Сам Соси",
+        date: "Sun Apr 21 2019 21:30:07",
+        isMe: false,
+        isReaded: true,
+        attachments: [],
+        user: {
+            id: "123123123",
+        },
     },
 ];

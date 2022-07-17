@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
+import { withRouter } from "react-router";
+import { connect } from "react-redux";
+
 import { Messages, ChatInput, Status, Sidebar } from "../../containers";
 import SidebarContainer from "../../containers/Sidebar";
+
+import { dialogsActions } from "../../redux/actions";
 
 import "./Home.scss";
 import "../../styles/layouts/_chat.scss";
@@ -12,8 +17,10 @@ const Home = (props) => {
      */
     useEffect(() => {
         const { pathname } = props.location;
-        // const dialogId = pathname.split("/").pop();
-        // setCurrentDialogId(dialogId);
+
+        const dialogId = pathname.split("/").pop();
+        console.log(dialogId, "dialogId");
+        setCurrentDialogId(dialogId);
     }, [props.location.pathname]);
 
     return (
@@ -76,4 +83,6 @@ const Home = (props) => {
     );
 };
 
-export default Home;
+export default withRouter(
+    connect(({ user }) => ({ user: user.data }), dialogsActions)(Home)
+);

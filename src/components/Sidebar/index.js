@@ -16,11 +16,11 @@ const { TextArea } = Input;
  * @param messageText
  * @param selectedUserId
  * @param isLoading
- * @param users
+ * @param users - все доступные пользователи
  * @param onShow
  * @param onClose
  * @param onSearch
- * @param onChangeInput
+ * @param onChangeInput - callback при вводе пользователя
  * @param onSelectUser
  * @param onChangeTextArea
  * @param onModalOk
@@ -56,7 +56,7 @@ const Sidebar = ({
                 <PlusIcon
                     className="plus-icon"
                     onClick={onShow}
-                    alt="оздать диалог"
+                    alt="Создать диалог"
                 />
             </div>
 

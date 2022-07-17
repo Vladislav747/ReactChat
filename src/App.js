@@ -16,10 +16,10 @@ const App = (props) => {
                 />
                 <Route
                     path="/"
-                    // render={() =>
-                    //     isAuth ? <Home /> : <Redirect to="/signin" />
-                    // }
-                    component={Home}
+                    render={() =>
+                        isAuth ? <Home /> : <Redirect to="/signin" />
+                    }
+                    // component={Home}
                 />
             </Switch>
         </div>
