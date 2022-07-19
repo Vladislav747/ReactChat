@@ -1,7 +1,15 @@
 import React from "react";
-import { Status as StatusBase } from "../components";
 import { connect } from "react-redux";
 
+import { Status as StatusBase } from "../components";
+/**
+ * Компонент со статусом пользователя вверху
+ * @param currentDialogId
+ * @param user
+ * @param dialogs
+ * @returns {JSX.Element|null}
+ * @constructor
+ */
 const Status = ({ currentDialogId, user, dialogs }) => {
     if (!dialogs.length || !currentDialogId) {
         return null;
@@ -13,13 +21,15 @@ const Status = ({ currentDialogId, user, dialogs }) => {
 
     let partner = {};
 
-    if (currentDialogObj.author._id === user._id) {
-        partner = currentDialogObj.partner;
+    if (currentDialogObj?.author._id === user._id) {
+        partner = currentDialogObj?.partner;
     } else {
-        partner = currentDialogObj.author;
+        partner = currentDialogObj?.author;
     }
 
-    return <StatusBase online={partner.isOnline} fullname={partner.fullname} />;
+    return (
+        <StatusBase online={partner?.isOnline} fullname={partner?.fullname} />
+    );
 };
 
 export default connect(({ dialogs, user }) => ({

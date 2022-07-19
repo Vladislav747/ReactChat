@@ -3,7 +3,9 @@ import { Button, Modal, Select, Input, Form } from "antd";
 import { Dialogs } from "../../containers";
 
 import "./Sidebar.scss";
+
 import { ReactComponent as PlusIcon } from "../../assets/icons/PlusIcon.svg";
+import { ReactComponent as UsersIcon } from "../../assets/icons/UsersIcon.svg";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -50,7 +52,8 @@ const Sidebar = ({
     return (
         <div className="chat__sidebar">
             <div className="chat__sidebar-header">
-                <div>
+                <div className="header__left-part">
+                    <UsersIcon className="users-icon" />
                     <span>Список диалогов</span>
                 </div>
                 <PlusIcon
