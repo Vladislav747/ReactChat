@@ -18,13 +18,10 @@ const Messages = ({
     removeMessageById,
     attachments,
 }) => {
-    console.log(items, "items");
-    console.log(user, "user");
     const [previewImage, setPreviewImage] = useState(null);
     const [blockHeight, setBlockHeight] = useState(135);
     const [isTyping, setIsTyping] = useState(false);
     let typingTimeoutId = null;
-    console.log(isTyping, "isTyping");
     const messagesRef = useRef(null);
 
     const onNewMessage = (data) => {

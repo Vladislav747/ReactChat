@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 
 import { userApi, dialogsApi } from "../utils/api";
 import { Sidebar } from "../components";
+import { dialogsActions } from "../redux/actions";
 
-const SidebarContainer = ({ user }) => {
+const SidebarContainer = ({ user, fetchDialogs }) => {
     const [visible, setVisible] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [messageText, setMessageText] = useState("");
@@ -39,6 +40,7 @@ const SidebarContainer = ({ user }) => {
                 partner: selectedUserId,
                 text: messageText,
             })
+            .then(fetchDialogs)
             .then(onClose)
             .catch(() => {
                 setIsLoading(false);
@@ -77,4 +79,4 @@ const SidebarContainer = ({ user }) => {
     );
 };
 
-export default connect(({ user }) => ({ user: user.data }))(SidebarContainer);
+export default connect(({ user }) => ({ user: user.data }), dialogsActions)(SidebarContainer);

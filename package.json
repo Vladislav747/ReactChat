@@ -25,7 +25,6 @@
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "emoji-mart": "^3.0.0",
-    "eslint": "^6.6.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-react": "^7.29.4",
     "file-loader": "4.3.0",
@@ -54,7 +53,7 @@
     "react-dom": "16.14.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^5.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "reset-css": "^5.0.1",
@@ -152,6 +151,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-react-app": "^7.0.1",
     "gh-pages": "^3.0.0",
     "sass": "^1.50.1"
   }
