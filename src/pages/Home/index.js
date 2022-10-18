@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 
 import { Messages, ChatInput, Status, Sidebar } from "../../containers";
-import SidebarContainer from "../../containers/Sidebar";
 
 import { dialogsActions } from "../../redux/actions";
 
@@ -18,15 +17,21 @@ const Home = (props) => {
     useEffect(() => {
         const { pathname } = props.location;
 
+        /**
+         * TODO@ 
+         * 
+         * Можно сделать проверку что такой диалог 
+         * есть или если кто то пытается ввести id диалога
+         */
         const dialogId = pathname.split("/").pop();
         console.log(dialogId, "dialogId");
         setCurrentDialogId(dialogId);
-    }, [props.location.pathname]);
+    }, [props.location, props.location.pathname, setCurrentDialogId]);
 
     return (
         <section className="home">
             <div className="chat">
-                <SidebarContainer />
+                <Sidebar />
 
                 {user && (
                     <div className="chat__dialog">
