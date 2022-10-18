@@ -6,6 +6,10 @@ import { Picker } from "emoji-mart";
 
 import { UploadFiles } from "../../components";
 
+import { ReactComponent as MicIcon } from "../../assets/icons/MicIcon.svg";
+import { ReactComponent as UploadIcon } from "../../assets/icons/UploadIcon.svg";
+import { ReactComponent as EmojiIcon } from "../../assets/icons/SmileIcon.svg";
+
 import "./ChatInput.scss";
 
 const { TextArea } = Input;
@@ -47,11 +51,9 @@ const ChatInput = (props) => {
                                 />
                             )}
                         </div>
-                        <Button
+                        <EmojiIcon
+                            className="emoji-icon"
                             onClick={toggleEmojiPicker}
-                            type="link"
-                            shape="circle"
-                            icon="smile"
                         />
                     </div>
                     {isRecording ? (
@@ -88,7 +90,7 @@ const ChatInput = (props) => {
                                 multiple: "multiple",
                             }}
                         >
-                            <Button type="link" shape="circle" icon="camera" />
+                            <UploadIcon />
                         </UploadField>
                         {isLoading ? (
                             <Button type="link" shape="circle" icon="loading" />
@@ -101,12 +103,7 @@ const ChatInput = (props) => {
                             />
                         ) : (
                             <div className="chat-input__record-btn">
-                                <Button
-                                    onClick={onRecord}
-                                    type="link"
-                                    shape="circle"
-                                    icon="audio"
-                                />
+                                <MicIcon onClick={onRecord} />
                             </div>
                         )}
                     </div>

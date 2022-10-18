@@ -20,9 +20,11 @@ const Message = ({
     return (
         <div className={classNames("message", { "message--isme": isMe })}>
             <div className="message__info">
-                <div className="message__avatar">
-                    <img src={avatar} alt={`Avatar ${fullname}`} />
-                </div>
+                {avatar && (
+                    <div className="message__avatar">
+                        <img src={avatar} alt={`Avatar ${fullname}`} />
+                    </div>
+                )}
                 <div className="message__content">
                     <div className="message__bubble">
                         <p className="message__text">{text}</p>
@@ -38,12 +40,16 @@ const Message = ({
                                 </div>
                             ))}
                     </div>
-                    <div className="message__date">
-                        {distanceInWordsToNow(date, {
-                            addSuffix: true,
-                            locale: ruLocale,
-                        })}
-                    </div>
+
+                    {date && (
+                        <div className="message__date">
+                            {distanceInWordsToNow(date, {
+                                addSuffix: true,
+                                locale: ruLocale,
+                            })}
+                        </div>
+                    )}
+
                     <IconReaded isMe={isMe} isReaded={isReaded} />
                 </div>
             </div>
