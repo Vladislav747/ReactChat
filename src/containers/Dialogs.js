@@ -37,7 +37,7 @@ const Dialogs = ({
         if (items.length) {
             onChangeInput();
         }
-    }, [items, onChangeInput]);
+    }, [items]);
 
     useEffect(() => {
         fetchDialogs();

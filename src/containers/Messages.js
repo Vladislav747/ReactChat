@@ -34,7 +34,7 @@ const Messages = ({
         typingTimeoutId = setTimeout(() => {
             setIsTyping(false);
         }, 3000);
-    }, [typingTimeoutId]);
+    }, []);
 
     useEffect(() => {
         socket.on("DIALOGS:TYPING", toggleIsTyping);
