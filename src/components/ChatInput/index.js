@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Button, Input } from "antd";
+import { Button } from "antd";
 import { UploadField } from "@navjobs/upload";
 import { Picker } from "emoji-mart";
 
@@ -11,8 +11,6 @@ import { ReactComponent as UploadIcon } from "../../assets/icons/UploadIcon.svg"
 import { ReactComponent as EmojiIcon } from "../../assets/icons/SmileIcon.svg";
 
 import "./ChatInput.scss";
-
-const { TextArea } = Input;
 
 /**
  * Компонент Ввода в чате
@@ -69,13 +67,14 @@ const ChatInput = (props) => {
                             />
                         </div>
                     ) : (
-                        <TextArea
+                        <textarea
+                            className="chat-input__textarea"
                             onChange={(e) => setValue(e.target.value)}
                             onKeyUp={handleSendMessage}
-                            size="large"
                             placeholder="Введите текст сообщения…"
                             value={value}
-                            autosize={{ minRows: 1, maxRows: 6 }}
+                            minRows={1}
+                            maxRows={6}
                         />
                     )}
 

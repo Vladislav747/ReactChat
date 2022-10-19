@@ -1,8 +1,13 @@
 .chat-input {
     position: relative;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     & > div:first-of-type {
         display: flex;
+        justify-content: center;
     }
 
     &__smile-btn {
@@ -16,6 +21,16 @@
             cursor: pointer;
             font-size: 20px;
         }
+    }
+
+    &__textarea {
+        width: 500px;
+        height: 50px;
+        resize: none;
+        border: 1px solid #ececec;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 2%);
+        border-radius: 12px;
+        padding: 10px 15px;
     }
 
     &__emoji-picker {
