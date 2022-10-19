@@ -9,6 +9,7 @@ import { UploadFiles } from "../../components";
 import { ReactComponent as MicIcon } from "../../assets/icons/MicIcon.svg";
 import { ReactComponent as UploadIcon } from "../../assets/icons/UploadIcon.svg";
 import { ReactComponent as EmojiIcon } from "../../assets/icons/SmileIcon.svg";
+import { ReactComponent as SendIcon } from "../../assets/icons/SendIcon.svg";
 
 import "./ChatInput.scss";
 
@@ -92,12 +93,13 @@ const ChatInput = (props) => {
                         {isLoading ? (
                             <Button type="link" shape="circle" icon="loading" />
                         ) : isRecording || value || attachments.length ? (
-                            <Button
+                            <button
+                                className="chat-input__send-btn"
                                 onClick={sendMessage}
-                                type="link"
-                                shape="circle"
-                                icon="check-circle"
-                            />
+                            >
+                                Отправить
+                                <SendIcon />
+                            </button>
                         ) : (
                             <div className="chat-input__record-btn">
                                 <MicIcon onClick={onRecord} />
