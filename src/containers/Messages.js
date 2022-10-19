@@ -63,8 +63,6 @@ const Messages = ({
         if (messagesRef?.current) messagesRef.current.scrollTo(0, 999999);
     }, [items, isTyping]);
 
-    console.log(currentDialog, "currentDialog Messages");
-
     return !currentDialog ? (
         <Empty description="Откройте диалог" />
     ) : (

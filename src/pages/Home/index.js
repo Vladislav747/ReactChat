@@ -18,13 +18,12 @@ const Home = (props) => {
         const { pathname } = props.location;
 
         /**
-         * TODO@ 
-         * 
-         * Можно сделать проверку что такой диалог 
+         * TODO@
+         *
+         * Можно сделать проверку что такой диалог
          * есть или если кто то пытается ввести id диалога
          */
         const dialogId = pathname.split("/").pop();
-        console.log(dialogId, "dialogId");
         setCurrentDialogId(dialogId);
     }, [props.location, props.location.pathname, setCurrentDialogId]);
 

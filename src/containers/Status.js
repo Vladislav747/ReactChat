@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { dialogsActions } from "../redux/actions";
+
 import { Status as StatusBase } from "../components";
 /**
  * Компонент со статусом пользователя вверху
@@ -10,7 +12,7 @@ import { Status as StatusBase } from "../components";
  * @returns {JSX.Element|null}
  * @constructor
  */
-const Status = ({ currentDialogId, user, dialogs }) => {
+const Status = ({ currentDialogId, user, dialogs, deleteDialog }) => {
     if (!dialogs.length || !currentDialogId) {
         return null;
     }
@@ -28,12 +30,19 @@ const Status = ({ currentDialogId, user, dialogs }) => {
     }
 
     return (
-        <StatusBase online={partner?.isOnline} fullname={partner?.fullname} />
+        <StatusBase
+            online={partner?.isOnline}
+            fullname={partner?.fullname}
+            deleteDialog={() => deleteDialog(currentDialogId)}
+        />
     );
 };
 
-export default connect(({ dialogs, user }) => ({
-    dialogs: dialogs.items,
-    currentDialogId: dialogs.currentDialogId,
-    user: user.data,
-}))(Status);
+export default connect(
+    ({ dialogs, user }) => ({
+        dialogs: dialogs.items,
+        currentDialogId: dialogs.currentDialogId,
+        user: user.data,
+    }),
+    dialogsActions
+)(Status);

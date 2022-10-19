@@ -28,6 +28,12 @@ const Actions = {
             dispatch(Actions.setDialogs(data));
         });
     },
+    deleteDialog: (id) => (dispatch) => {
+        dialogsApi.delete(id).then(() => {
+            dispatch(Actions.fetchDialogs());
+            document.location.href = "/";
+        });
+    },
 };
 
 export default Actions;
