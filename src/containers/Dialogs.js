@@ -37,6 +37,7 @@ const Dialogs = ({
         if (items.length) {
             onChangeInput();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [items]);
 
     useEffect(() => {
@@ -49,6 +50,7 @@ const Dialogs = ({
             socket.removeListener("SERVER:DIALOG_CREATED", fetchDialogs);
             socket.removeListener("SERVER:NEW_MESSAGE", fetchDialogs);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

@@ -21,7 +21,7 @@ const Messages = ({
     const [previewImage, setPreviewImage] = useState(null);
     const [blockHeight, setBlockHeight] = useState(135);
     const [isTyping, setIsTyping] = useState(false);
-    let typingTimeoutId = null;
+    let typingTimeoutId = useRef(null);
     const messagesRef = useRef(null);
 
     const onNewMessage = (data) => {
@@ -30,8 +30,8 @@ const Messages = ({
 
     const toggleIsTyping = useCallback(() => {
         setIsTyping(true);
-        clearInterval(typingTimeoutId);
-        typingTimeoutId = setTimeout(() => {
+        clearInterval(typingTimeoutId.current);
+        typingTimeoutId.current = setTimeout(() => {
             setIsTyping(false);
         }, 3000);
     }, []);
@@ -56,6 +56,7 @@ const Messages = ({
         socket.on("SERVER:NEW_MESSAGE", onNewMessage);
 
         return () => socket.removeListener("SERVER:NEW_MESSAGE", onNewMessage);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentDialog]);
 
     useEffect(() => {
