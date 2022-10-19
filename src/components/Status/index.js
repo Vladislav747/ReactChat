@@ -4,6 +4,8 @@ import classNames from "classnames";
 
 import { Button, Popover } from "antd";
 
+import { ReactComponent as CircleDownIcon } from "../../assets/icons/CircleDownIcon.svg";
+
 import "./Status.scss";
 
 const Status = ({ online, fullname }) => (
@@ -30,7 +32,7 @@ const Status = ({ online, fullname }) => (
             trigger="click"
         >
             <div>
-                <Button type="link" shape="circle" icon="ellipsis" />
+                <CircleDownIcon className="chat__dialog-circle-down" />
             </div>
         </Popover>
     </div>

@@ -211,5 +211,13 @@
                 color: $black;
             }
         }
+
+        .message__icon {
+            &-readed {
+                position: absolute;
+                bottom: 22px;
+                right: 110px;
+            }
+        }
     }
 }

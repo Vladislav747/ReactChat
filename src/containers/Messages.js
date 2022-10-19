@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { connect } from "react-redux";
 import { Empty } from "antd";
 import find from "lodash/find";
@@ -28,17 +28,17 @@ const Messages = ({
         addMessage(data);
     };
 
-    const toggleIsTyping = () => {
+    const toggleIsTyping = useCallback(() => {
         setIsTyping(true);
         clearInterval(typingTimeoutId);
         typingTimeoutId = setTimeout(() => {
             setIsTyping(false);
         }, 3000);
-    };
+    }, [typingTimeoutId]);
 
     useEffect(() => {
         socket.on("DIALOGS:TYPING", toggleIsTyping);
-    }, []);
+    }, [toggleIsTyping]);
 
     useEffect(() => {
         if (attachments.length) {

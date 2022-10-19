@@ -73,8 +73,6 @@ const ChatInput = (props) => {
                             onKeyUp={handleSendMessage}
                             placeholder="Введите текст сообщения…"
                             value={value}
-                            minRows={1}
-                            maxRows={6}
                         />
                     )}
 
@@ -107,7 +105,7 @@ const ChatInput = (props) => {
                         )}
                     </div>
                 </div>
-                {attachments.length > 0 && (
+                {!!attachments.length && (
                     <div className="chat-input__attachments">
                         <UploadFiles
                             removeAttachment={removeAttachment}
